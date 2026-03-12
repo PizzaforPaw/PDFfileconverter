@@ -1,0 +1,115 @@
+PODS:
+  - cunning_document_scanner (1.0.0):
+    - Flutter
+  - DKImagePickerController/Core (4.3.9):
+    - DKImagePickerController/ImageDataManager
+    - DKImagePickerController/Resource
+  - DKImagePickerController/ImageDataManager (4.3.9)
+  - DKImagePickerController/PhotoGallery (4.3.9):
+    - DKImagePickerController/Core
+    - DKPhotoGallery
+  - DKImagePickerController/Resource (4.3.9)
+  - DKPhotoGallery (0.0.19):
+    - DKPhotoGallery/Core (= 0.0.19)
+    - DKPhotoGallery/Model (= 0.0.19)
+    - DKPhotoGallery/Preview (= 0.0.19)
+    - DKPhotoGallery/Resource (= 0.0.19)
+    - SDWebImage
+    - SwiftyGif
+  - DKPhotoGallery/Core (0.0.19):
+    - DKPhotoGallery/Model
+    - DKPhotoGallery/Preview
+    - SDWebImage
+    - SwiftyGif
+  - DKPhotoGallery/Model (0.0.19):
+    - SDWebImage
+    - SwiftyGif
+  - DKPhotoGallery/Preview (0.0.19):
+    - DKPhotoGallery/Model
+    - DKPhotoGallery/Resource
+    - SDWebImage
+    - SwiftyGif
+  - DKPhotoGallery/Resource (0.0.19):
+    - SDWebImage
+    - SwiftyGif
+  - doc_scan_flutter (1.0.0):
+    - Flutter
+  - file_picker (0.0.1):
+    - DKImagePickerController/PhotoGallery
+    - Flutter
+  - Flutter (1.0.0)
+  - google_mlkit_document_scanner (0.4.1):
+    - Flutter
+  - image_cropper (0.0.4):
+    - Flutter
+    - TOCropViewController (~> 2.8.0)
+  - image_picker_ios (0.0.1):
+    - Flutter
+  - open_file_ios (1.0.3):
+    - Flutter
+  - permission_handler_apple (9.3.0):
+    - Flutter
+  - SDWebImage (5.21.7):
+    - SDWebImage/Core (= 5.21.7)
+  - SDWebImage/Core (5.21.7)
+  - SwiftyGif (5.4.5)
+  - TOCropViewController (2.8.0)
+
+DEPENDENCIES:
+  - cunning_document_scanner (from `.symlinks/plugins/cunning_document_scanner/ios`)
+  - doc_scan_flutter (from `.symlinks/plugins/doc_scan_flutter/ios`)
+  - file_picker (from `.symlinks/plugins/file_picker/ios`)
+  - Flutter (from `Flutter`)
+  - google_mlkit_document_scanner (from `.symlinks/plugins/google_mlkit_document_scanner/ios`)
+  - image_cropper (from `.symlinks/plugins/image_cropper/ios`)
+  - image_picker_ios (from `.symlinks/plugins/image_picker_ios/ios`)
+  - open_file_ios (from `.symlinks/plugins/open_file_ios/ios`)
+  - permission_handler_apple (from `.symlinks/plugins/permission_handler_apple/ios`)
+
+SPEC REPOS:
+  trunk:
+    - DKImagePickerController
+    - DKPhotoGallery
+    - SDWebImage
+    - SwiftyGif
+    - TOCropViewController
+
+EXTERNAL SOURCES:
+  cunning_document_scanner:
+    :path: ".symlinks/plugins/cunning_document_scanner/ios"
+  doc_scan_flutter:
+    :path: ".symlinks/plugins/doc_scan_flutter/ios"
+  file_picker:
+    :path: ".symlinks/plugins/file_picker/ios"
+  Flutter:
+    :path: Flutter
+  google_mlkit_document_scanner:
+    :path: ".symlinks/plugins/google_mlkit_document_scanner/ios"
+  image_cropper:
+    :path: ".symlinks/plugins/image_cropper/ios"
+  image_picker_ios:
+    :path: ".symlinks/plugins/image_picker_ios/ios"
+  open_file_ios:
+    :path: ".symlinks/plugins/open_file_ios/ios"
+  permission_handler_apple:
+    :path: ".symlinks/plugins/permission_handler_apple/ios"
+
+SPEC CHECKSUMS:
+  cunning_document_scanner: 7cb9bd173f7cc7b11696dde98d01492187fc3a67
+  DKImagePickerController: 946cec48c7873164274ecc4624d19e3da4c1ef3c
+  DKPhotoGallery: b3834fecb755ee09a593d7c9e389d8b5d6deed60
+  doc_scan_flutter: c6bdae611545e4056c8e8ef697a1be59905cb4c9
+  file_picker: b159e0c068aef54932bb15dc9fd1571818edaf49
+  Flutter: cabc95a1d2626b1b06e7179b784ebcf0c0cde467
+  google_mlkit_document_scanner: d29c639e9bfbeeaba455efb83635d23b127a858f
+  image_cropper: b8ef14d3fcff4040b0f9da2ca28d98219a5cba0e
+  image_picker_ios: 4f2f91b01abdb52842a8e277617df877e40f905b
+  open_file_ios: ece9c5358aec7b7ed7dc12fcb0f926ef6d6650f1
+  permission_handler_apple: 9878588469a2b0d0fc1e048d9f43605f92e6cec2
+  SDWebImage: e9fc87c1aab89a8ab1bbd74eba378c6f53be8abf
+  SwiftyGif: 706c60cf65fa2bc5ee0313beece843c8eb8194d4
+  TOCropViewController: 797deaf39c90e6e9ddd848d88817f6b9a8a09888
+
+PODFILE CHECKSUM: ef9363b9c9ffa9aa5e7d1b752f359015073f3aaf
+
+COCOAPODS: 1.16.2
