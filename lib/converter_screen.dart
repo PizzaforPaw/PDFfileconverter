@@ -88,9 +88,6 @@ class _ConverterScreenState extends State<ConverterScreen>
   }
 
   // ── Conversion ───────────────────────────────────────────────
-  // Runs on the main isolate — syncfusion/archive/xml/excel are
-  // pure-Dart and need no native FFI. Spawning a separate isolate
-  // crashes on iOS because objective_c.dylib is unavailable there.
   Future<void> _convert() async {
     if (_filePath == null) return;
     _pulseCtrl.repeat(reverse: true);
@@ -113,7 +110,7 @@ class _ConverterScreenState extends State<ConverterScreen>
       setState(() { _progress = 0.65; });
 
       final pdfBytes = await convertToPdfBytes(
-        fileBytes: bytes,       // ← matches the named param in doc_utils.dart
+        fileBytes: bytes,
         docType:   _docType,
       );
 
@@ -241,8 +238,9 @@ class _ConverterScreenState extends State<ConverterScreen>
                 ),
               ),
             ] else ...[
-              // Pick File button
+              // ── Three equal-height buttons in a row ──────────────
               Row(children: [
+                // Pick File
                 Expanded(
                   child: GestureDetector(
                     onTap: _isProcessing ? null : _pickFile,
@@ -273,8 +271,8 @@ class _ConverterScreenState extends State<ConverterScreen>
                     ),
                   ),
                 ),
-                const SizedBox(width: 12),
-                // Scan Document button
+                const SizedBox(width: 10),
+                // Scan Document
                 Expanded(
                   child: GestureDetector(
                     onTap: _isProcessing ? null : _scanCamera,
@@ -305,42 +303,44 @@ class _ConverterScreenState extends State<ConverterScreen>
                     ),
                   ),
                 ),
+                const SizedBox(width: 10),
+                // ── Hồ sơ cần ký — same height as siblings ──────────
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () => Navigator.push(
+                      context,
+                      CupertinoPageRoute(
+                          builder: (_) => const SelectFileScreen()),
+                    ),
+                    child: Container(
+                      height: 110,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(16),
+                        border: Border.all(
+                            color: const Color(0xFF1565C0), width: 1.8),
+                      ),
+                      child: const Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(CupertinoIcons.folder_fill,
+                              size: 36, color: Color(0xFF1565C0)),
+                          SizedBox(height: 8),
+                          Text('Hồ sơ cần ký',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 13,
+                                  color: Color(0xFF1565C0))),
+                          SizedBox(height: 2),
+                          Text('Chọn & ký hồ sơ',
+                              style: TextStyle(
+                                  fontSize: 10, color: Color(0xFFBDBDBD))),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
               ]),
-
-              // ── Hồ sơ shortcut button ────────────────────────────
-              const SizedBox(height: 12),
-              GestureDetector(
-                onTap: () => Navigator.push(
-                  context,
-                  CupertinoPageRoute(
-                      builder: (_) => const SelectFileScreen()),
-                ),
-                child: Container(
-                  height: 56,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(16),
-                    border: Border.all(
-                        color: const Color(0xFF1565C0), width: 1.8),
-                  ),
-                  child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(CupertinoIcons.folder_fill,
-                          size: 20, color: Color(0xFF1565C0)),
-                      SizedBox(width: 10),
-                      Text('Hồ sơ cần ký',
-                          style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 15,
-                              color: Color(0xFF1565C0))),
-                      SizedBox(width: 6),
-                      Icon(CupertinoIcons.chevron_right,
-                          size: 14, color: Color(0xFF1565C0)),
-                    ],
-                  ),
-                ),
-              ),
             ],
             const SizedBox(height: 16),
 
