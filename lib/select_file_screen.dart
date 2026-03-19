@@ -103,6 +103,15 @@ class _SelectFileScreenState extends State<SelectFileScreen> {
         _annexUploaded      = false;
       }
     });
+    if (mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Tạo hồ sơ thành công!'),
+          backgroundColor: Color(0xFF1565C0),
+          duration: Duration(seconds: 2),
+        ),
+      );
+    }
   }
 
   // ── Helpers ───────────────────────────────────────────────
